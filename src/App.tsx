@@ -4,6 +4,7 @@ import {Main} from "./layout/sections/main/Main";
 import {Work} from "./layout/sections/work/Work";
 import {Visual} from "./layout/sections/visual/Visual";
 import {Projects} from "./layout/sections/projects/Projects";
+import {Contact} from "./layout/sections/contact/Contact";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <Work/>
             <Visual/>
             <Projects/>
+            <Contact/>
         </div>
     );
 }
