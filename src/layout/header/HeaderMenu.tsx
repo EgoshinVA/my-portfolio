@@ -22,9 +22,10 @@ export const HeaderMenu = (props: headerMenuPropsType) => {
 };
 
 const StyledHeaderMenu = styled.div`
+    
 `
 
 const StyledList = styled.ul`
   display: flex;
-  gap: 20px;
+  gap: 60px;
 `

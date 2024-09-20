@@ -17,9 +17,21 @@ export const GlobalStyled = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: Manrope, sans-serif;
   }
   
   section {
     background-color: ${theme.colors.primaryBg};
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    color: ${theme.colors.font};
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
   }
 `
