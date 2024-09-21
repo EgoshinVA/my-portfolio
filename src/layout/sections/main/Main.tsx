@@ -53,6 +53,7 @@ const MainTitle = styled.h1`
 const Image = styled.img`
   width: 400px;
   height: 400px;
+  margin-right: 100px;
 `
 
 

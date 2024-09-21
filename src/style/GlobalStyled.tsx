@@ -9,7 +9,7 @@ export const GlobalStyled = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -19,19 +19,24 @@ export const GlobalStyled = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-family: Manrope, sans-serif;
   }
-  
+
   section {
     background-color: ${theme.colors.primaryBg};
   }
-  
+
   ul {
     list-style: none;
   }
-  
+
   a {
     color: ${theme.colors.font};
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  button {
+    cursor: pointer;
   }
 `

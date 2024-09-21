@@ -16,7 +16,6 @@ const StyledButton = styled.button`
   width: 300px;
   height: 57px;
   background-color: ${theme.colors.button};
-  cursor: pointer;
   border: none;
   border-radius: 4px;
   color: #FFFFFF;
