@@ -18,11 +18,15 @@ export const Work = () => {
                     <Icon iconId={'arrow'} height={'32'} viewBox={'0 0 32 32'}/>
                     <Label>Featured Work</Label>
                 </LabelIcon>
-                <FlexWrapper wrap justify={'center'}>
-                    <WorkPhotoWrapper><WorkPhoto src={laptop}/><Link>InVersion</Link></WorkPhotoWrapper>
-                    <WorkPhotoWrapper second><WorkPhoto src={mac}/><Link>InVersion</Link></WorkPhotoWrapper>
-                    <WorkPhotoWrapper><WorkPhoto src={work}/><Link>InVersion</Link></WorkPhotoWrapper>
-                    <WorkPhotoWrapper second><WorkPhoto src={phone}/><Link>InVersion</Link></WorkPhotoWrapper>
+                <FlexWrapper wrap justify={'center'} align={'flex-start'}>
+                    <Column>
+                        <WorkPhotoWrapper><WorkPhoto src={laptop}/><Link>InVersion</Link></WorkPhotoWrapper>
+                        <WorkPhotoWrapper><WorkPhoto src={work}/><Link>InVersion</Link></WorkPhotoWrapper>
+                    </Column>
+                    <Column>
+                        <WorkPhotoWrapper><WorkPhoto src={mac}/><Link>InVersion</Link></WorkPhotoWrapper>
+                        <WorkPhotoWrapper><WorkPhoto src={phone}/><Link>InVersion</Link></WorkPhotoWrapper>
+                    </Column>
                 </FlexWrapper>
             </Container>
         </StyledWork>
@@ -44,10 +48,6 @@ const LabelIcon = styled.div`
 
 `
 
-type WorkPhotoPropsType = {
-    second?: boolean
-}
-
 const WorkPhoto = styled.img`
   width: 612px;
   height: 888px;
@@ -63,9 +63,12 @@ const Link = styled.a`
   transform: translate(-50%, -50%);
 `
 
-const WorkPhotoWrapper = styled.div<WorkPhotoPropsType>`
+const WorkPhotoWrapper = styled.div`
   position: relative;
-  transform: translateY(${props => props.second ? '138px' : '0'});
+
+  & + & {
+    margin-top: 24px;
+  }
 
   &:hover {
     &::before {
@@ -74,15 +77,27 @@ const WorkPhotoWrapper = styled.div<WorkPhotoPropsType>`
       top: 0;
       right: 0;
       left: 0;
-      bottom: 0;
+      bottom: 5px;
       background: rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
     }
   ;
 
     ${Link} {
       opacity: 1;
-      
+
     }
   }
 `
 
+const Column = styled.div`
+  flex-direction: column;
+
+  & + & {
+    margin-left: 24px;
+  }
+  
+  &:last-child {
+    margin-top: 138px;
+  }
+`
