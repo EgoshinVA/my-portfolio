@@ -18,6 +18,7 @@ export const GlobalStyled = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: Manrope, sans-serif;
+    color: ${theme.colors.font};
   }
 
   section {
@@ -29,7 +30,6 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   a {
-    color: ${theme.colors.font};
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;

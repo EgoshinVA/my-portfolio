@@ -46,7 +46,6 @@ const MainText = styled.span`
 const MainTitle = styled.h1`
   font-size: 54px;
   font-weight: 700;
-  color: ${theme.colors.font};
   margin-top: 31px;
 `
 

@@ -38,7 +38,6 @@ const StyledWork = styled.section``
 const Label = styled.label``
 
 const LabelIcon = styled.div`
-  color: ${theme.colors.font};
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
