@@ -34,6 +34,10 @@ export const GlobalStyled = createGlobalStyle`
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
+    
+    &:visited {
+      color: ${theme.colors.font};
+    }
   }
 
   button {
