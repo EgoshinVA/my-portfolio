@@ -12,7 +12,7 @@ function App() {
         <div>
             <Header/>
             <Main/>
-            {/*<Work/>*/}
+            <Work/>
             {/*<Visual/>*/}
             {/*<Projects/>*/}
             {/*<Contact/>*/}

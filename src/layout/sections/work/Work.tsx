@@ -18,7 +18,7 @@ export const Work = () => {
                     <Icon iconId={'arrow'} height={'32'} viewBox={'0 0 32 32'}/>
                     <Label>Featured Work</Label>
                 </LabelIcon>
-                <FlexWrapper wrap justify={'center'} align={'flex-start'}>
+                <FlexWrapper wrap justify={'center'}>
                     <Column>
                         <WorkPhotoWrapper><WorkPhoto src={laptop}/><Link>InVersion</Link></WorkPhotoWrapper>
                         <WorkPhotoWrapper><WorkPhoto src={work}/><Link>InVersion</Link></WorkPhotoWrapper>
@@ -33,7 +33,11 @@ export const Work = () => {
     );
 };
 
-const StyledWork = styled.section``
+const StyledWork = styled.section`
+  ${FlexWrapper}{
+    gap: 24px;
+  }
+`
 
 const Label = styled.label``
 
@@ -50,6 +54,11 @@ const LabelIcon = styled.div`
 const WorkPhoto = styled.img`
   width: 612px;
   height: 888px;
+  
+     @media ${theme.media.tablet}{
+       width: 366px;
+       height: 600px;
+     }
 `
 
 const Link = styled.a`
@@ -91,12 +100,12 @@ const WorkPhotoWrapper = styled.div`
 
 const Column = styled.div`
   flex-direction: column;
-
-  & + & {
-    margin-left: 24px;
+  
+  @media screen and (min-width: 1298px){
+    &:last-child {
+      margin-top: 138px;
+    }
   }
   
-  &:last-child {
-    margin-top: 138px;
-  }
+  
 `
