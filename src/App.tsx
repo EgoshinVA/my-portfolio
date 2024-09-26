@@ -15,7 +15,7 @@ function App() {
             <Work/>
             <Visual/>
             <Projects/>
-            {/*<Contact/>*/}
+            <Contact/>
             {/*<Footer/>*/}
         </div>
     );
