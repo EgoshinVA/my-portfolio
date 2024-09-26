@@ -13,7 +13,7 @@ function App() {
             <Header/>
             <Main/>
             <Work/>
-            {/*<Visual/>*/}
+            <Visual/>
             {/*<Projects/>*/}
             {/*<Contact/>*/}
             {/*<Footer/>*/}

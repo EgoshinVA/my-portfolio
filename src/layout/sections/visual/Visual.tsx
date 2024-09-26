@@ -9,13 +9,14 @@ import game from '../../../assets/images/game.png'
 import ball from '../../../assets/images/ball.png'
 import rectangle from '../../../assets/images/rectangle.png'
 import {Container} from "../../../components/Container";
+import {theme} from "../../../style/Theme";
 
 export const Visual = () => {
     return (
         <StyledVisual>
             <Container>
                 <SectionTitle>Visual Explorations</SectionTitle>
-                <FlexWrapper wrap justify={'space-between'}>
+                <FlexWrapper wrap justify={'space-around'}>
                     <Picture src={cube}/>
                     <Picture src={ellipse}/>
                     <Picture src={chair}/>
@@ -28,13 +29,23 @@ export const Visual = () => {
     );
 };
 
-const StyledVisual = styled.section``
+const StyledVisual = styled.section`
+${FlexWrapper}{
+  gap: 24px;
+  
+  @media ${theme.media.tablet}{
+    gap: 16px;
+  }
+}
+`
 
 const Picture = styled.img`
-  width: 400px;
-  height: 408px;
+  max-width: 400px;
+  width: 366px;
+  flex-grow: 1;
+  aspect-ratio: 1 / 1;
 
-  &:nth-child(1n + 4) {
-    margin-top: 24px;
-  }
+  // @media ${theme.media.tablet}{
+  //  
+  // }
 `
