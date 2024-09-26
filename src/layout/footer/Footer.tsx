@@ -31,6 +31,7 @@ const StyledFooter = styled.footer`
   position: relative;
   height: 120px;
 
+  
 
   &::before {
     position: absolute;
@@ -38,6 +39,17 @@ const StyledFooter = styled.footer`
     width: 100%;
     height: 1px;
     background-color: #696969;
+  }
+
+  @media ${theme.media.tablet}{
+    ${FlexWrapper}{
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+    }
+    height: 191px;
+    
   }
 `
 

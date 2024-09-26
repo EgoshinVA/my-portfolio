@@ -16,7 +16,7 @@ function App() {
             <Visual/>
             <Projects/>
             <Contact/>
-            {/*<Footer/>*/}
+            <Footer/>
         </div>
     );
 }
