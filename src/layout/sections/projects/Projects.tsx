@@ -12,7 +12,7 @@ export const Projects = () => {
         <StyledProjects>
             <Container>
                 <SectionTitle>Personal Projects</SectionTitle>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-between'} wrap>
                     <ProjectPhoto src={figma}/>
                     <ProjectPhoto src={bust}/>
                     <ProjectPhoto src={hand}/>

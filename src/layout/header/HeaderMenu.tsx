@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {theme} from "../../style/Theme";
 
 type headerMenuPropsType = {
     menuItems: Array<string>
@@ -22,7 +23,9 @@ export const HeaderMenu = (props: headerMenuPropsType) => {
 };
 
 const StyledHeaderMenu = styled.div`
-    
+  @media ${theme.media.tablet} {
+    display: none;
+  }
 `
 
 const StyledList = styled.ul`

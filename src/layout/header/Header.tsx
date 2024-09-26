@@ -5,6 +5,7 @@ import Icon from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {theme} from "../../style/Theme";
 import {Container} from "../../components/Container";
+import {MobileMenu} from "./MobileMenu";
 
 export const Header = () => {
     let menuItems = ['Home', 'Work', 'Contact']
@@ -18,6 +19,7 @@ export const Header = () => {
                         <Title>Portfolio</Title>
                     </Logo>
                     <HeaderMenu menuItems={menuItems}/>
+                    <MobileMenu menuItems={menuItems}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -30,6 +32,10 @@ const StyledHeader = styled.header`
   top: 0;
   width: 100%;
   height: 80px;
+  
+  @media ${theme.media.tablet}{
+    height: 72px;
+  }
 `
 
 const Logo = styled.div`
