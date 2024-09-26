@@ -5,6 +5,7 @@ import {Button} from "../../../components/Button";
 import photo from '../../../assets/images/photo.png'
 import {Container} from "../../../components/Container";
 import {theme} from "../../../style/Theme";
+import {font} from "../../../style/Common";
 
 export const Main = () => {
     return (
@@ -16,7 +17,7 @@ export const Main = () => {
                             <p>A Product Designer</p>
                                 <p>based in City.</p></MainTitle>
                         <MainText><p>I help businesses and companies reach</p>
-                            <p>their goals by designing user-centric digital</p>
+                            <p>their goals by designing usercentric digital</p>
                             <p>products & interactive experiences.</p></MainText>
                         <Button></Button>
                     </MainTextBlock>
@@ -28,31 +29,50 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  padding: 190px 0 145px
+  padding: 190px 0 145px;
+  @media ${theme.media.tablet} {
+    ${FlexWrapper} {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `
 
 const MainTextBlock = styled.div`
   display: flex;
   flex-direction: column;
+  @media ${theme.media.tablet}{
+    align-items: center;
+  }
 `
 
 const MainText = styled.span`
-  font-size: 20px;
-  font-weight: 600;
+  ${font({weight: 500, Fmax: 20, Fmin: 18})}
   color: ${theme.colors.secondFont};
   margin: 24px 0 88px;
+  @media ${theme.media.tablet} {
+    text-align: center;
+    margin: 20px 0 48px;
+  }
 `
 
 const MainTitle = styled.h1`
-  font-size: 54px;
-  font-weight: 700;
+  ${font({weight: 700, Fmax: 54, Fmin: 36})}
   margin-top: 31px;
+  @media ${theme.media.tablet} {
+    text-align: center;
+  }
 `
 
 const Image = styled.img`
-  width: 400px;
-  height: 400px;
-  margin-right: 100px;
+  max-width: 400px;
+  max-height: 400px;
+
+  @media ${theme.media.tablet} {
+    width: 240px;
+    height: 240px;
+  }
 `
 
 
