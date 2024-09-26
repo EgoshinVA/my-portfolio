@@ -14,7 +14,7 @@ function App() {
             <Main/>
             <Work/>
             <Visual/>
-            {/*<Projects/>*/}
+            <Projects/>
             {/*<Contact/>*/}
             {/*<Footer/>*/}
         </div>

@@ -44,8 +44,4 @@ const Picture = styled.img`
   width: 366px;
   flex-grow: 1;
   aspect-ratio: 1 / 1;
-
-  // @media ${theme.media.tablet}{
-  //  
-  // }
 `

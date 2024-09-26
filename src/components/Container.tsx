@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../style/Theme";
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -6,5 +7,4 @@ export const Container = styled.div`
   padding: 0 25px;
   width: 100%;
   min-height: 100%;
-
 `
