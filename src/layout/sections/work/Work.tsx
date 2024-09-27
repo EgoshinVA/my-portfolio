@@ -8,6 +8,7 @@ import phone from '../../../assets/images/phone.png'
 import {Container} from "../../../components/Container";
 import Icon from "../../../components/icon/Icon";
 import {theme} from "../../../style/Theme";
+import {font} from "../../../style/Common";
 
 
 export const Work = () => {
@@ -34,20 +35,30 @@ export const Work = () => {
 };
 
 const StyledWork = styled.section`
+  padding-top: 20px;
   ${FlexWrapper}{
     gap: 24px;
   }
 `
 
-const Label = styled.label``
+const Label = styled.label`
+  ${font({Fmax: 16, Fmin: 18, weight:700})};
+  text-transform: uppercase;
+  @media ${theme.media.tablet}{
+    text-transform: capitalize;
+  }
+`
 
 const LabelIcon = styled.div`
   font-size: 16px;
   font-weight: 700;
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   margin-bottom: 80px;
+  
+  @media ${theme.media.tablet}{
+    margin-bottom: 39px;
+  }
 
 `
 

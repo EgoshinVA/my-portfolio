@@ -26,6 +26,12 @@ const StyledContact = styled.section`
   button {
     margin: 0 auto;
   }
+  
+  ${SectionTitle}{
+    padding: 240px 0 24px;
+  }
+  
+  
 
   padding-bottom: 124px;
 

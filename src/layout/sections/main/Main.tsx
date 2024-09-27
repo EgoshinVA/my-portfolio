@@ -29,13 +29,14 @@ export const Main = () => {
 };
 
 const StyledMain = styled.section`
-  padding: 190px 0 145px;
+  padding: 210px 0 145px;
   @media ${theme.media.tablet} {
     ${FlexWrapper} {
       flex-direction: column-reverse;
       justify-content: center;
       align-items: center;
     }
+    padding: 144px 0 128px;
   }
 `
 
@@ -62,16 +63,19 @@ const MainTitle = styled.h1`
   margin-top: 31px;
   @media ${theme.media.tablet} {
     text-align: center;
+    margin-top: 64px;
   }
 `
 
 const Image = styled.img`
   max-width: 400px;
   max-height: 400px;
+  margin-right: 106px;
 
   @media ${theme.media.tablet} {
     width: 240px;
     height: 240px;
+    margin-right: 0;
   }
 `
 

@@ -37,6 +37,12 @@ ${FlexWrapper}{
     gap: 16px;
   }
 }
+  ${SectionTitle}{
+    @media ${theme.media.tablet} {
+      padding: 116px 0 34px;
+    }
+  }
+  
 `
 
 const Picture = styled.img`
