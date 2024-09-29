@@ -1,52 +1,36 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useState} from 'react';
 import {HeaderMenu} from "./HeaderMenu";
 import Icon from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
-import {theme} from "../../style/Theme";
 import {Container} from "../../components/Container";
 import {MobileMenu} from "./MobileMenu";
+import { S } from './Header_Styles';
 
-export const Header = () => {
+export const Header: React.FC = () => {
     let menuItems = ['Home', 'Work', 'Contact']
 
+    let [width, setWidth] = useState(window.innerWidth)
+    const breakpoint = 768
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener('resize', handleWindowResize)
+
+        return () => window.removeEventListener('resize', handleWindowResize)
+    }, [])
+
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
-                    <Logo>
+                    <S.Logo>
                         <Icon iconId='logo' viewBox={'0 0 40 40'} width={'40'} height={'40'}/>
-                        <Title>Portfolio</Title>
-                    </Logo>
-                    <HeaderMenu menuItems={menuItems}/>
-                    <MobileMenu menuItems={menuItems}/>
+                        <S.Title>Portfolio</S.Title>
+                    </S.Logo>
+                    {width < breakpoint ? <MobileMenu menuItems={menuItems}/> : <HeaderMenu menuItems={menuItems}/>}
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
-
-const StyledHeader = styled.header`
-  background-color: ${theme.colors.secondaryBg};
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  
-  @media ${theme.media.tablet}{
-    height: 72px;
-  }
-`
-
-const Logo = styled.div`
-  color: ${theme.colors.font};
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-`
-
-const Title = styled.span`
-  font-size: 20px;
-  font-weight: 800;
-`
 

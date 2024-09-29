@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {SectionTitle} from "../../../components/SectionTitle";
 import cube from '../../../assets/images/cube.png'
@@ -9,45 +8,19 @@ import game from '../../../assets/images/game.png'
 import ball from '../../../assets/images/ball.png'
 import rectangle from '../../../assets/images/rectangle.png'
 import {Container} from "../../../components/Container";
-import {theme} from "../../../style/Theme";
+import { S } from './Visual_Styles';
 
-export const Visual = () => {
+const photoData = [cube, ellipse, chair, game, ball, rectangle]
+
+export const Visual: React.FC = () => {
     return (
-        <StyledVisual>
+        <S.Visual>
             <Container>
                 <SectionTitle>Visual Explorations</SectionTitle>
                 <FlexWrapper wrap justify={'space-around'}>
-                    <Picture src={cube}/>
-                    <Picture src={ellipse}/>
-                    <Picture src={chair}/>
-                    <Picture src={game}/>
-                    <Picture src={ball}/>
-                    <Picture src={rectangle}/>
+                    {photoData.map((photo, index)=><S.Picture key={index} src={photo}/>)}
                 </FlexWrapper>
             </Container>
-        </StyledVisual>
+        </S.Visual>
     );
 };
-
-const StyledVisual = styled.section`
-${FlexWrapper}{
-  gap: 24px;
-  
-  @media ${theme.media.tablet}{
-    gap: 16px;
-  }
-}
-  ${SectionTitle}{
-    @media ${theme.media.tablet} {
-      padding: 116px 0 34px;
-    }
-  }
-  
-`
-
-const Picture = styled.img`
-  max-width: 400px;
-  width: 366px;
-  flex-grow: 1;
-  aspect-ratio: 1 / 1;
-`

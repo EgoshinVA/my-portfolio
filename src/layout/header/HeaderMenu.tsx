@@ -1,34 +1,15 @@
 import React from 'react';
-import styled from "styled-components";
-import {theme} from "../../style/Theme";
+import { S } from './Header_Styles';
+import {Menu} from "./Menu";
 
-type headerMenuPropsType = {
+type HeaderMenuPropsType = {
     menuItems: Array<string>
 }
 
-export const HeaderMenu = (props: headerMenuPropsType) => {
+export const HeaderMenu: React.FC<HeaderMenuPropsType> = (props) => {
     return (
-        <StyledHeaderMenu>
-            <StyledList>
-                {props.menuItems.map((item, index) =>
-                    <li key={index}>
-                        <a href=''>
-                            {item}
-                        </a>
-                    </li>
-                )}
-            </StyledList>
-        </StyledHeaderMenu>
+        <S.HeaderMenu>
+            <Menu menuItems={props.menuItems}/>
+        </S.HeaderMenu>
     );
 };
-
-const StyledHeaderMenu = styled.div`
-  @media ${theme.media.tablet} {
-    display: none;
-  }
-`
-
-const StyledList = styled.ul`
-  display: flex;
-  gap: 60px;
-`

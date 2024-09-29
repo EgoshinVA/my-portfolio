@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {theme} from "../style/Theme";
 import Icon from "./icon/Icon";
 
-export const Button = () => {
+export const Button: React.FC = () => {
     return (
         <StyledButton>
             <Icon iconId={'mail'} height={'16'} width={'24'} viewBox={'0 0 16 21'}/>
