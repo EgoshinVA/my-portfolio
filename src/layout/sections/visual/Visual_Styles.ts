@@ -4,19 +4,22 @@ import {theme} from "../../../style/Theme";
 import {SectionTitle} from "../../../components/SectionTitle";
 
 const Visual = styled.section`
-${FlexWrapper}{
-  gap: 24px;
-  
-  @media ${theme.media.tablet}{
-    gap: 16px;
+  position: relative;
+
+  ${FlexWrapper} {
+    gap: 24px;
+
+    @media ${theme.media.tablet} {
+      gap: 16px;
+    }
   }
-}
-  ${SectionTitle}{
+
+  ${SectionTitle} {
     @media ${theme.media.tablet} {
       padding: 116px 0 34px;
     }
   }
-  
+
 `
 
 const Picture = styled.img`

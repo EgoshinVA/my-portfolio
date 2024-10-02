@@ -4,7 +4,7 @@ import Icon from "../../components/icon/Icon";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Container} from "../../components/Container";
 import {MobileMenu} from "./MobileMenu";
-import { S } from './Header_Styles';
+import {S} from './Header_Styles';
 
 export const Header: React.FC = () => {
     let menuItems = ['Home', 'Work', 'Contact']
@@ -23,10 +23,12 @@ export const Header: React.FC = () => {
         <S.Header>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
-                    <S.Logo>
-                        <Icon iconId='logo' viewBox={'0 0 40 40'} width={'40'} height={'40'}/>
-                        <S.Title>Portfolio</S.Title>
-                    </S.Logo>
+                    <S.NavLink to={'home'}>
+                        <S.Logo>
+                            <Icon iconId='logo' viewBox={'0 0 40 40'} width={'40'} height={'40'}/>
+                            <S.Title>Portfolio</S.Title>
+                        </S.Logo>
+                    </S.NavLink>
                     {width < breakpoint ? <MobileMenu menuItems={menuItems}/> : <HeaderMenu menuItems={menuItems}/>}
                 </FlexWrapper>
             </Container>

@@ -1,14 +1,16 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../style/Theme";
+import { Link } from 'react-scroll';
 
 // header
 
 const Header = styled.header`
   background-color: ${theme.colors.secondaryBg};
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
+  z-index: 99999;
   
   @media ${theme.media.tablet}{
     height: 72px;
@@ -58,6 +60,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: absolute;
     top: 28px;
     right: 24px;
+    transition: ${theme.animations.animation};
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
       background-color: rgba(255, 255, 255, 0);
@@ -70,6 +73,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(-7px);
+      transition: ${theme.animations.animation};
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         transform: rotate(-45deg) translateY(0);
@@ -84,6 +88,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       background-color: ${theme.colors.font};
       position: absolute;
       transform: translateY(7px);
+      transition: ${theme.animations.animation};
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         transform: rotate(45deg) translateY(0);
@@ -109,6 +114,10 @@ const StyledPopup = styled.div<{ isOpen: boolean }>`
   `}
 `
 
+//menu
+
+const NavLink = styled(Link)``
+
 export const S = {
     Header,
     Logo,
@@ -116,5 +125,6 @@ export const S = {
     HeaderMenu,
     MobileMenu,
     BurgerButton,
-    StyledPopup
+    StyledPopup,
+    NavLink
 }

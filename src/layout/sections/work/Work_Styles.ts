@@ -4,8 +4,10 @@ import {font} from "../../../style/Common";
 import {theme} from "../../../style/Theme";
 
 const Work = styled.section`
+  position: relative;
   padding-top: 20px;
-  ${FlexWrapper}{
+
+  ${FlexWrapper} {
     gap: 24px;
   }
 `
@@ -48,7 +50,8 @@ const Link = styled.a`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -35%);
+  transition: ${theme.animations.animation};
 `
 
 const WorkPhotoWrapper = styled.div`
@@ -58,22 +61,27 @@ const WorkPhotoWrapper = styled.div`
     margin-top: 24px;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 5px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    transition: ${theme.animations.animation};
+  }
+
   &:hover {
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 5px;
       background: rgba(0, 0, 0, 0.6);
-      border-radius: 4px;
     }
   ;
 
     ${Link} {
       opacity: 1;
-
+      transform: translate(-50%, -50%);
     }
   }
 `

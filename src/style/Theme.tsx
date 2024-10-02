@@ -9,5 +9,9 @@ export const theme = {
     media: {
         mobile: 'screen and (max-width: 576px)',
         tablet: 'screen and (max-width: 768px)'
+    },
+
+    animations: {
+        animation: '.2s ease-in-out;'
     }
 }

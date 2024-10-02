@@ -1,4 +1,5 @@
 import React from 'react';
+import { S } from './Header_Styles';
 
 type MenuPropsType = {
     menuItems: Array<string>
@@ -9,9 +10,9 @@ export const Menu: React.FC<MenuPropsType> = (props) => {
         <ul>
             {props.menuItems.map((item, index) =>
                 <li key={index}>
-                    <a href=''>
+                    <S.NavLink to={item.toLowerCase()} smooth={true} isDynamic={true}>
                         {item}
-                    </a>
+                    </S.NavLink>
                 </li>
             )}
         </ul>

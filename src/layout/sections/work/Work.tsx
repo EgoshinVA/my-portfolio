@@ -10,7 +10,7 @@ import { S } from './Work_Styles';
 
 export const Work: React.FC = () => {
     return (
-        <S.Work>
+        <S.Work id={'work'}>
             <Container>
                 <S.LabelIcon>
                     <Icon iconId={'arrow'} height={'32'} viewBox={'0 0 32 32'}/>
