@@ -9,6 +9,7 @@ import ball from '../../../assets/images/ball.png'
 import rectangle from '../../../assets/images/rectangle.png'
 import {Container} from "../../../components/Container";
 import {S} from './Visual_Styles';
+import {Fade} from "react-awesome-reveal";
 
 const photoData = [cube, ellipse, chair, game, ball, rectangle]
 
@@ -18,7 +19,9 @@ export const Visual: React.FC = () => {
             <Container>
                 <SectionTitle>Visual Explorations</SectionTitle>
                 <FlexWrapper wrap justify={'space-around'}>
+                    <Fade>
                         {photoData.map((photo, index) => <S.Picture key={index} src={photo}/>)}
+                    </Fade>
                 </FlexWrapper>
             </Container>
         </S.Visual>

@@ -105,12 +105,24 @@ const StyledPopup = styled.div<{ isOpen: boolean }>`
   left: 0;
   z-index: 99999;
   background-color: ${theme.colors.secondaryBg};
-  display: none;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in-out;
+  transform: translateY(-100%);
+  display: flex;
+  
+  ul{
+    display: flex;
+    flex-direction: column;
+    transition: 1s ease-in-out;
+    gap: 10px;
+  }
   
   ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
+    transform: translateY(0);
+    ul {
+      gap: 40px;
+    }
   `}
 `
 
